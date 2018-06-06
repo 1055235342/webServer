@@ -33,7 +33,7 @@ public class HttpServerHandler extends SimpleChannelInboundHandler<FullHttpReque
 		HttpMethod method = request.getMethod();
 		String path = System.getProperty("user.dir")+"/src/main/resources/com/wpixel/webapp"+uri;
 		
-		System.out.println("xxxxxxxxxxxxxx"+uri+"=="+method);
+		System.out.println("====="+uri+"=="+method);
 		
 		ByteBuf buf = Unpooled.directBuffer();
 		File file = new File(path);
