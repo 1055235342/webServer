@@ -31,13 +31,14 @@ public class HttpServerHandler extends SimpleChannelInboundHandler<FullHttpReque
 	protected void channelRead0(ChannelHandlerContext ctx, FullHttpRequest request) throws Exception {
 		String uri = request.getUri();
 		HttpMethod method = request.getMethod();
-		String path = System.getProperty("user.dir")+"/src/main/resources/com/wpixel/webapp"+uri;
-		
-		System.out.println("sssss====="+uri+"=="+method);
+		if(uri.equals("/")){
+			uri = "/index.html";
+		}
+		String path = System.getProperty("user.dir")+"/webapp"+uri;
 		
 		ByteBuf buf = Unpooled.directBuffer();
 		File file = new File(path);
-		if(!file.exists()){
+		if(!file.exists() || !file.isFile()){
 			buf.writeBytes("404".getBytes());
 		}else{
 			InputStream in = new FileInputStream(file);
