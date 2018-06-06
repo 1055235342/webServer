@@ -48,7 +48,5 @@ public class Bootstrap {
 			int port = Integer.valueOf(object);
 			new Server().run(port);
 		}
-		
-		
 	}
 }
