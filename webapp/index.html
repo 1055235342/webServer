@@ -1,17 +1,329 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-  <head>
-    <title>首页</title>
-    <meta name="keywords" content="keyword1,keyword2,keyword3">
-    <meta name="description" content="this is my page">
-    <meta name="content-type" content="text/html; charset=UTF-8">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-    <style>
-    	body{font-size:50px;}
-    </style>
-  </head>
-  
-  <body>
-    This is my HTML page.<br>
-  </body>
+	<head>	
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Wpixel</title>
+		<meta name="Keywords" content="关键字，关键字">
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-Width,initial-scale=1,user-scalable=0" />
+
+		<!--css,js-->
+		<style type="text/css">
+			*{margin:0;padding:0;}
+			body{font-size:12px;font-family:"微软雅黑";color:#666;}
+			img{border:0;}
+			
+			/*banner start*/
+			.banner{width:100%;height:600px;overflow:hidden;position:relative;}
+			.banner .b_img{width:100%;height:600px;position:absolute;top:0;left:0;}
+			.banner .b_btn{position:absolute;left:45%;bottom:10px;z-index:2;}
+			.banner .b_btn ul{display:inline-block;padding:4px 14px;border-radius:10px;}
+			.banner .b_btn ul li{width:10px;height:10px;float:left;background:#222;border:1px solid #222;list-style:none;margin:0 5px;border-radius:6px;}
+			.banner .b_btn ul .on{background:none;border:1px solid #111;}
+			.banner .ear{width:50px;height:100px;background:url(images/banner_icon.png) no-repeat;z-index:2;}
+			.banner .left{position:absolute;top:50%;left:7%;background-position:0 12px;}
+			.banner .left:hover{background-position:-50px 12px;}
+			.banner .right{position:absolute;top:50%;right:7%;background-position:-81px 12px;}
+			.banner .right:hover{background-position:-131px 12px;}
+			/*end banner*/
+
+			/*header start*/
+			.header .h_yy{width:100%;height:50px;background:#000;position:absolute;top:0;left:0;opacity:0.5;filter:alpha(opacity=50);z-index:2;}
+			.header .h_heade{width:100%;height:50px;position:absolute;top:0;left:0;z-index:2;}
+			.header .h_heade .bead{width:1180px;height:50px;margin:0 auto;}
+			.header .h_heade .bead .logo{width:200px;height:50px;float:left;}
+			.header .h_heade .bead .logo img{margin:;float:left;margin-top:17px;}
+			.header .h_heade .bead .logo .l_txt{float:left;color:#fff;font-size:14px;margin:15px 0 0 14px;}
+
+			.header .h_heade .bead .center{width:700px;height:50px;float:right;}
+			.header .h_heade .bead .center .nav ul li{float:left;list-style:none;font-size:12px;padding:15px 0;}
+			.header .h_heade .bead .center .nav ul li a{text-decoration:none;color:#fff;padding:15px 18px;}
+			.header .h_heade .bead .center .nav ul li a:hover{color:#f00;}
+
+			/*header end*/
+
+
+			/*tool start*/
+			.tool{width:100%;height:500px;}
+			.tool ul{display:block;width:970px;margin:38px auto;list-style:none;}
+			.tool ul .t_b1{border-right:0;border-bottom:1px solid #cecece;}
+			.tool ul .t_b2{border-right:0;}
+			.tool ul .t_b3{border-bottom:1px solid #cecece;}
+			.tool ul li{display:block;width:320px;height:213px;border-right:1px solid #cecece;float:left;text-align:center;}
+			.tool .line{border-bottom:1px solid red;}
+			.tool ul li a{text-decoration:none;font-size:15px;color:#000;}
+			.tool ul li a i{display:block;width:66px;height:66px;margin:0 auto;margin-top:30px;background:url("images/icon.png") no-repeat;}
+			.tool ul li a p{margin:12px 0;}
+			.tool ul li a .t_email{background-position:-9px -40px;}
+			.tool ul li a .t_bus{background-position:-98px -40px;}
+			.tool ul li a .t_locate{background-position:-184px -40px;}
+			.tool ul li a .t_upload{background-position:-264px -40px;width:73px;height:66px;}
+			.tool ul li a .t_launch{background-position:-353px -40px;}
+			.tool ul li a .t_website{background-position:-440px -40px;}
+			/*end tool*/			
+
+			/*bottom start*/
+			.bottom{width:100%;}
+			.bottom .b_bottom{width:1180px;height:185px;margin:0 auto;border-bottom:1px solid #ddd;}
+			.bottom .b_bottom .b_inform{width:300px;float:left;margin-left:30px;}
+			.bottom .b_bottom .b_inform img{float:left;margin:30px 20px 0 20px;}
+			.bottom .b_bottom .b_inform span{font-size:12px;display:block;margin:30px 20px 0 20px;text-indent: 2em;}
+			.bottom .b_bottom .b_contact{width:300px;float:left;margin-left:90px;}
+			.bottom .b_bottom .b_contact h3{margin:30px 20px 0 20px;font-size:16px;}
+			.bottom .b_bottom .b_contact ul{margin-top:10px;}
+			.bottom .b_bottom .b_contact ul li{list-style:none;line-height:20px;margin-left:20px;}
+			.bottom .b_bottom .b_contact span{font-size:13px;margin:10px 20px 0 20px;display:block;}
+			.bottom .b_bottom .b_WeChat{width:300px;float:left;margin-left:80px;}
+			.bottom .b_bottom .b_WeChat .wos{margin:39px 17px 0 50px;float:left;}
+			.bottom .b_bottom .b_WeChat .wos h3{font-size:16px;}
+			.bottom .b_bottom .b_WeChat img{float:left;margin-top:20px;}
+			/*bottom end*/
+
+			/*coty start*/
+			.coty{width:100%;height:30px;}
+			.coty p{height:30px;width:100%;text-align:center;line-height:30px;}
+			/*coty end*/
+	
+			@media screen and (max-device-width:1180px){
+				/*header start*/
+				.header{width:100%;height:105px;border-bottom:1px solid #ddd;}
+				.header .bead{width:100%;;height:105px;margin:0 auto;border-bottom:1px solid #ddd;}
+				.header .bead .logo{width:100%;height:105px;}
+				.header .bead .logo img{float:left;}
+				.header .bead .logo .l_txt{float:left;height:105px;margin-left:30px;}
+				.header .bead .logo .l_txt .l_text{font-size:40px;color:#000;display:inline-block;margin-top:10px;}
+				.header .bead .logo .l_txt .l_text1{font-size:40px;}
+				.header .bead .logo .l_txt .l_text2{display:none;}	
+				/*header end*/
+
+				/*center start*/
+				.center{width:100%;height:40px;border-bottom:1px solid #ddd;position:relative;}
+				.center .nav{width:100%;}
+				.center .nav ul{width:100%;height:40px;margin-left:0%;float:left;}				
+				.center .nav ul li{list-style:none;float:left;padding:9px 1px;}
+				.center .nav ul li a{font-size:16px;}
+				/*center end*/	
+				
+
+				/*bottom start*/
+				.bottom{width:100%;display:none;}
+				/*bottom end*/
+
+				/*coty start*/
+				.coty{width:100%;height:30px;}
+				.coty p{height:30px;width:100%;text-align:center;line-height:10px;}
+				/*coty end*/
+
+			}	
+
+			.clear{clear:both;}
+		</style>
+	</head>
+<body>
+	<!--banner start-->
+	<div class="banner">
+		<div class="b_pic">
+			<div class="b_img" style="background:url(images/banner/4.jpg) no-repeat top center;"></div>
+			<div class="b_img" style="background:url(images/banner/3.jpg) no-repeat top center;"></div>
+			<div class="b_img" style="background:url(images/banner/2.jpg) no-repeat top center;"></div>
+			<div class="b_img" style="background:url(images/banner/1.jpg) no-repeat top center;"></div>		
+		</div>
+		<div class="b_btn">
+			<ul>
+				<li class="on"></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+		<div class="ear left"></div>
+		<div class="ear right"></div>
+	</div>
+	<!--end banner-->
+
+	<!--header start-->
+	<div class="header">
+		<div class="h_yy"></div>
+		<div class="h_heade">
+			<div class="bead">
+				<div class="logo">
+					<img src="images/logo.png" alt="logo" width="80" height="17"/>
+					<div class="l_txt">WPIXEL</div>
+				</div>
+				<div class="center">
+					<div class="nav">
+						<ul>
+							<li>
+								<a href="###">首页</a>
+							</li>
+							<li>
+								<a href="###">中文文档</a>
+							</li>
+							<li>
+								<a href="###">下载</a>
+							</li>
+							<li>
+								<a href="###">论坛</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>	
+		</div>
+	</div>
+	<!--header end-->
+
+	<!--tool start-->
+	<div class="tool">
+		<ul>
+			<li class="t_b3">
+				<a href="#">
+					<i class="t_email"></i>
+					<p>Email Address</p>
+				</a>
+				<span>Lorem ipsum dolor sit amet,  sed dia  consetetur sadipscing elitr, sed diam nonumy eirmod.</span>
+			</li>
+			<li class="t_b3">
+				<a href="#">
+					<i class="t_bus"></i>
+					<p>Business Ideas</p>
+				</a>
+				<span>Lorem ipsum dolor sit amet,  sed dia  consetetur sadipscing elitr, sed diam nonumy eirmod.</span>
+			</li>
+			<li class="t_b1">
+				<a href="#">
+					<i class="t_locate"></i>
+					<p>Locate</p>
+				</a>
+				<span>Lorem ipsum dolor sit amet,  sed dia  consetetur sadipscing elitr, sed diam nonumy eirmod.</span>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="#">
+					<i class="t_upload"></i>
+					<p>Upload</p>
+				</a>
+				<span>Lorem ipsum dolor sit amet,  sed dia  consetetur sadipscing elitr, sed diam nonumy eirmod.</span>
+			</li>
+			<li>
+				<a href="#">
+					<i class="t_launch"></i>
+					<p>Launch</p>
+				</a>
+				<span>Lorem ipsum dolor sit amet,  sed dia  consetetur sadipscing elitr, sed diam nonumy eirmod.</span>
+			</li>
+			<li class="t_b2">
+				<a href="#">
+					<i class="t_website"></i>
+					<p>Website</p>
+				</a>
+				<span>Lorem ipsum dolor sit amet,  sed dia  consetetur sadipscing elitr, sed diam nonumy eirmod.</span>
+			</li>
+		</ul>
+	</div>
+	<!--end tool-->
+
+	<div class=""></div>
+
+	<!--bottom start-->
+	<div class="bottom">
+		<div class="b_bottom">
+			<div class="b_inform">
+				<img src="images/logo.png" alt="logo" width="50" height="11"/>
+				<span>WPIXEL刚刚创立，还在探索阶段，有任何意见和想法可联系我们，感谢你的支持ZeroSide刚刚创立，还在探索阶段，有任何意见和想法可联系我们，感谢你的支持ZeroSide刚刚创立，还在探索阶段，有任何意见和想法可联系我们，感谢你的支持</span>
+			</div>
+			<div class="b_contact">
+				<h3>联系我们</h3>
+				<ul>
+					<li>Email: 1055235342@qq.com</li>
+					<li>QQ: 1055235342</li>
+				</ul>
+				
+				<span>WPIXEL刚刚创立，还在探索阶段，有任何意见和想法可联系我们，感谢你的支持</span>
+			</div>
+			<div class="b_WeChat">
+				<div class="wos">
+					<h3>官</h3>
+					<h3>方</h3>
+					<h3>微</h3>
+					<h3>信</h3>
+				</div>
+				<img src="images/wx.jpg" alt="微信" width="150" height="150"/>
+			</div>
+		</div>		
+	</div>
+	<!--bottom end-->
+
+	<!--coty start-->
+	<div class="coty">
+		<p>Copyright © 2014.Company name All rights reserved.Zero-side</p>
+	</div>
+	<!--coty end-->
+	
+<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript">
+	var auto_setInterval = null;
+	var play_Time = 2000;
+	var index = 0;
+	var play_setInterval = null;
+	$(function(){
+		//btn
+		$(".b_btn").find("li").mouseover(function(){
+			$(this).addClass("on").siblings().removeClass("on");
+			var _index = $(this).index();
+			$(".b_img").css({"z-index":0,"opacity ":0});
+			$(".banner").find(".b_img").eq(_index).css({"z-index":1}).fadeIn(600);
+			clearInterval(play_setInterval);
+		}).mouseout(function(){
+			auto_play()
+		});
+		//下一页
+		$(".right").click(function(){
+			var _length = $(".b_btn").find("li").length;
+			index++;
+			if(index >= _length){
+				index = 0;
+			};
+			$(".b_btn").find("li").eq(index).addClass("on").siblings().removeClass("on");
+			$(".b_img").css({"z-index":0,"opacity ":0});
+			$(".banner").find(".b_img").eq(index).css({"z-index":1}).fadeIn(600).siblings().hide();
+			return index;
+		});
+		//上一页
+		$(".left").click(function(){
+			var _length = $(".b_btn").find("li").length;
+			index--;
+			if(index < 0){
+				index = _length-1;
+			};
+			$(".b_btn").find("li").eq(index).addClass("on").siblings().removeClass("on");
+			$(".b_img").css({"z-index":0,"opacity ":0});
+			$(".banner").find(".b_img").eq(index).css({"z-index":1}).fadeIn(600).siblings().hide();
+			return index;
+		});
+		//自动切换
+		function auto_play(){
+			play_setInterval = setInterval(function(){
+				$(".right").trigger("click");
+			},play_Time);
+		};		
+		auto_play()
+/*
+		//获取焦点
+		$("#s_text").focus(function(){
+			if($(this).val() == "搜索..."){
+				$(this).val("");
+			};		
+		});
+		//失去焦点
+		$("#s_text").blur(function(){
+			if($(this).val() == ""){
+				$(this).val("搜索...");
+			};
+		});
+*/
+	});
+</script>
+</body>
 </html>
