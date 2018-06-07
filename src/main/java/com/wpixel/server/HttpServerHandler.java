@@ -31,7 +31,7 @@ public class HttpServerHandler extends SimpleChannelInboundHandler<FullHttpReque
 	protected void channelRead0(ChannelHandlerContext ctx, FullHttpRequest request) throws Exception {
 		String uri = request.getUri();
 		HttpMethod method = request.getMethod();
-		if(uri.equals("/")){
+		if(uri != null && uri.equals("/")){
 			uri = "/index.html";
 		}
 		String path = System.getProperty("user.dir")+"/webapp"+uri;

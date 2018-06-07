@@ -5,15 +5,17 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.MalformedURLException;
 import java.util.Properties;
 
 import org.apache.log4j.Logger;
 
 import com.wpixel.server.Server;
 
-import jdk.internal.org.xml.sax.InputSource;
-
+/**
+ * 项目的根装载器
+ * @author RWBY
+ *
+ */
 public class Bootstrap {
 	
 	private static Logger logger = Logger.getLogger(Bootstrap.class);
@@ -22,7 +24,9 @@ public class Bootstrap {
 	protected String configFile = "conf/server.ini";
 	protected static Properties prop = null;
 	
-	@SuppressWarnings("resource")
+	/**
+	 * 初始化配置文件
+	 */
 	protected void init(){
 		File file = null;
 		InputStream fis = null;
@@ -39,6 +43,7 @@ public class Bootstrap {
 			e.printStackTrace();
 		}
 	}
+	
 	
 	public static void main(String[] args) {
 		if(admin == null){
