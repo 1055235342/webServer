@@ -8,6 +8,8 @@ import java.net.URI;
 
 import org.apache.log4j.Logger;
 
+import com.wpixel.pojo.IniPropertices;
+
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelHandlerContext;
@@ -32,9 +34,9 @@ public class HttpServerHandler extends SimpleChannelInboundHandler<FullHttpReque
 		String uri = request.getUri();
 		HttpMethod method = request.getMethod();
 		if(uri != null && uri.equals("/")){
-			uri = "/index.html";
+			uri = System.getProperty("file.separator")+"index.html";
 		}
-		String path = System.getProperty("user.dir")+"/webapp"+uri;
+		String path = System.getProperty("user.dir")+System.getProperty("file.separator")+IniPropertices.appBase+uri;
 		
 		ByteBuf buf = Unpooled.directBuffer();
 		File file = new File(path);

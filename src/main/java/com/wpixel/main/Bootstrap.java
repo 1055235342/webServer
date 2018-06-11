@@ -9,6 +9,7 @@ import java.util.Properties;
 
 import org.apache.log4j.Logger;
 
+import com.wpixel.pojo.IniPropertices;
 import com.wpixel.server.Server;
 
 /**
@@ -49,8 +50,9 @@ public class Bootstrap {
 		if(admin == null){
 			Bootstrap b = new Bootstrap();
 			b.init();
-			String object = prop.get("port").toString();
-			int port = Integer.valueOf(object);
+			IniPropertices.port = prop.get("port").toString();
+			IniPropertices.appBase = prop.get("appBase").toString();
+			int port = Integer.valueOf(IniPropertices.port);
 			new Server().run(port);
 		}
 	}
