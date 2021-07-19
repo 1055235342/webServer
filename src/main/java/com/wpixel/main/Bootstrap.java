@@ -22,7 +22,7 @@ public class Bootstrap {
 	private static Logger logger = Logger.getLogger(Bootstrap.class);
 	
 	protected static Bootstrap admin = null;
-	protected String configFile = "conf/server.ini";
+	protected String configFile = "server.ini";
 	protected static Properties prop = null;
 	
 	/**
