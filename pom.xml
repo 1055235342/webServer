@@ -30,7 +30,7 @@
        <repository>
          <id>internal.repo</id>
          <name>Internal repo</name>
-         <url>file:///home/wpixel</url>
+         <url>file:///Users/wpixel</url>
        </repository>
 </distributionManagement>
 </project>
