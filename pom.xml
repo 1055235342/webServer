@@ -24,6 +24,11 @@
   </dependencies>
   <build>
     <finalName>webServer</finalName>
+	  <resources>
+      		<resource>
+          		<directory>conf</directory>
+      		</resource>
+	</resources>
     <plugins>
       <!-- 配置jdk版本为1.8 -->
             <plugin>
