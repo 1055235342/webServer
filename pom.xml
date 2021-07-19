@@ -25,4 +25,12 @@
   <build>
     <finalName>webServer</finalName>
   </build>
+
+<distributionManagement>
+       <repository>
+         <id>internal.repo</id>
+         <name>Internal repo</name>
+         <url>file:///home/wpixel</url>
+       </repository>
+</distributionManagement>
 </project>
