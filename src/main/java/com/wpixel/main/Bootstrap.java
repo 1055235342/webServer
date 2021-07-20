@@ -22,7 +22,7 @@ public class Bootstrap {
 	private static Logger logger = Logger.getLogger(Bootstrap.class);
 	
 	protected static Bootstrap admin = null;
-	protected String configFile = "server.ini";
+	protected String configFile = "/server.ini";
 	protected static Properties prop = null;
 	
 	/**
@@ -33,9 +33,13 @@ public class Bootstrap {
 		InputStream fis = null;
 		prop = new Properties();
 		try {
-			file = new File(configFile);
-			fis = new FileInputStream(file);
-			prop.load(fis);
+//			file = new File(configFile);
+//			fis = new FileInputStream(file);
+//			prop.load(fis);
+
+			InputStream in = this.getClass().getResourceAsStream(configFile);
+			prop.load(in);
+
 		} catch (FileNotFoundException e) {
 			logger.error(e.getMessage());
 			e.printStackTrace();

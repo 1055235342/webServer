@@ -44,7 +44,8 @@ public class Server {
     				sc.pipeline().addLast(new HttpServerHandler());
     			}
     		});
-            
+
+			System.out.println("启动成功... ...");
             ChannelFuture cf = b.bind(port).sync();
             cf.channel().closeFuture().sync();
 		} catch (InterruptedException e) {
